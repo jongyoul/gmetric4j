@@ -5,7 +5,7 @@
   <artifactId>gmetric4j</artifactId>
   <name>gmetric4j</name>
   <packaging>bundle</packaging>
-  <version>1.0.10</version>
+  <version>1.0.10.di</version>
   <description>JVM instrumentation to Ganglia</description>
   <url>http://github.com/ganglia/gmetric4j</url>
   <licenses>
@@ -52,6 +52,47 @@
     <artifactId>oss-parent</artifactId>
     <version>7</version>
   </parent>
+  <!-- 프로젝트의 artifact를 배포할 저장소 -->
+  <distributionManagement>
+    <repository>
+      <id>skp-releases</id>
+      <name>skp-releases</name>
+      <url>http://mvn.skplanet.com/content/repositories/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>skp-snapshots</id>
+      <name>skp-snapshots</name>
+      <url>http://mvn.skplanet.com/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>skp-public</id>
+      <name>skplanet public repository</name>
+      <url>http://mvn.skplanet.com/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  <!-- 플러그인 읽기 저장소 설정 -->
+  <pluginRepositories>
+    <pluginRepository>
+      <id>skp-public</id>
+      <name>skp public repository</name>
+      <url>http://mvn.skplanet.com/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
   <build>
     <plugins>
       <plugin>
